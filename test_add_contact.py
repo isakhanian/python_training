@@ -52,7 +52,6 @@ class test_add_contact(unittest.TestCase):
         wd.find_element_by_name("address").click()
         wd.find_element_by_name("address").clear()
         wd.find_element_by_name("address").send_keys(group.companyaddress)
-        wd.find_element_by_xpath("//div[@id='content']//label[.='Telephone']").click()
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
         wd.find_element_by_name("home").send_keys(group.homenumber)
