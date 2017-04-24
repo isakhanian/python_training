@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83e0af46-b694-4a32-a17f-58c8d9d08ada" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.py" afterPath="$PROJECT_DIR$/application.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_add_group.py" afterPath="$PROJECT_DIR$/test_add_group.py" />
     </list>
     <ignored path="python_training.iws" />
@@ -32,23 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_add_group.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_add_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_add_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="22" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
-                <element signature="e#24#82#0" expanded="true" />
+                <element signature="e#24#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,14 +97,14 @@
         <option value="$PROJECT_DIR$/group_for_contacts.py" />
         <option value="$PROJECT_DIR$/1.py" />
         <option value="$PROJECT_DIR$/test_add_contact.py" />
-        <option value="$PROJECT_DIR$/test_add_group.py" />
         <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/test_add_group.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="31" />
+    <option name="x" value="517" />
+    <option name="y" value="86" />
     <option name="width" value="1250" />
     <option name="height" value="739" />
   </component>
@@ -147,29 +148,7 @@
     <property name="last_opened_file_path" value="/usr/bin/python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_add_group">
-    <configuration default="false" name="Unittests in 1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_training" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Pytest in test_add_group">
     <configuration default="false" name="Unittests in test_add_contact (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,6 +235,23 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_add_group" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_training" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_add_group.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
@@ -471,19 +467,19 @@
       <item index="0" class="java.lang.String" itemvalue="Python tests.Pytest in test_add_contact" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Pytest in test_add_group" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Pytest1" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in 1" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_contact (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group (1)" />
-      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittest test_add_group.test_add_empty_group" />
-      <item index="7" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_contact (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group (1)" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest test_add_group.test_add_empty_group" />
+      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group" />
+      <item index="7" class="java.lang.String" itemvalue="Python.test_add_group" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest test_add_group.test_add_empty_group" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_contact (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in 1" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test_add_group" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest test_add_group.test_add_empty_group" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_group (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_add_contact (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -501,15 +497,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Pytest1 - 2017.04.20 at 00h 10m 10s.xml">
-      <configuration name="Pytest1" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Pytest1 - 2017.04.20 at 00h 11m 46s.xml">
-      <configuration name="Pytest1" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Pytest1 - 2017.04.20 at 00h 18m 33s.xml">
-      <configuration name="Pytest1" configurationId="tests" />
-    </history-entry>
     <history-entry file="Pytest1 - 2017.04.20 at 00h 20m 33s.xml">
       <configuration name="Pytest1" configurationId="tests" />
     </history-entry>
@@ -522,6 +509,15 @@
     <history-entry file="Pytest_in_test_add_contact - 2017.04.20 at 00h 33m 05s.xml">
       <configuration name="Pytest in test_add_contact" configurationId="tests" />
     </history-entry>
+    <history-entry file="Pytest_in_test_add_group - 2017.04.25 at 00h 09m 15s.xml">
+      <configuration name="Pytest in test_add_group" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Pytest_in_test_add_group - 2017.04.25 at 00h 17m 44s.xml">
+      <configuration name="Pytest in test_add_group" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Pytest_in_test_add_group - 2017.04.25 at 00h 20m 32s.xml">
+      <configuration name="Pytest in test_add_group" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittest_test_add_group_test_add_empty_group - 2017.04.24 at 23h 34m 27s.xml">
       <configuration name="Unittest test_add_group.test_add_empty_group" configurationId="tests" />
     </history-entry>
@@ -533,7 +529,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="31" width="1250" height="739" extended-state="0" />
+    <frame x="517" y="86" width="1250" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -605,7 +601,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -641,7 +637,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -659,7 +655,7 @@
         <state relative-caret-position="270">
           <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -669,7 +665,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -679,7 +675,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -689,7 +685,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -699,7 +695,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -709,7 +705,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -719,7 +715,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#82#0" expanded="true" />
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,21 +770,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_add_group.py">
+    <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="22" />
-          <folding>
-            <element signature="e#24#82#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.py">
+    <entry file="file://$PROJECT_DIR$/test_add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
