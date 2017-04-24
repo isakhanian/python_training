@@ -1,20 +1,9 @@
-# -*- coding: utf-8 -*-
-from selenium.webdriver.firefox.webdriver import WebDriver
-import unittest
-from group import Group
+class Application:
 
-def is_alert_present(wd):
-    try:
-        wd.switch_to_alert().text
-        return True
-    except:
-        return False
 
-class test_add_group(unittest.TestCase):
-    def setUp(self):
+    def __index__(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(60)
-
 
     def open_home_page(self):
         wd = self.wd
@@ -62,18 +51,5 @@ class test_add_group(unittest.TestCase):
         wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def test_add_group(self):
-        self.login(username="admin", password="secret")
-        self.create_group(Group(name="new", header="newheader", footer="newfooter"))
-        self.logout()
-
-    def test_add_empty_group(self):
-        self.login(username="admin", password="secret")
-        self.create_group(Group(name="", header="", footer=""))
-        self.logout()
-
-    def tearDown(self):
+    def destroy(self):
         self.wd.quit()
-
-if __name__ == '__main__':
-    unittest.main()
