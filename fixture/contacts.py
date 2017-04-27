@@ -62,6 +62,35 @@ class ContactsHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.check_list()
 
+
+    def edit_first_contact(self, contedit):
+        wd = self.app.wd
+        self.check_list()
+        # select first contact
+        # edit first contact
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        wd.find_element_by_name("address").click()
+        wd.find_element_by_name("address").clear()
+        wd.find_element_by_name("address").send_keys(contedit.edaddress)
+        wd.find_element_by_name("home").click()
+        wd.find_element_by_name("home").clear()
+        wd.find_element_by_name("home").send_keys(contedit.edhomenumber)
+        wd.find_element_by_name("mobile").click()
+        wd.find_element_by_name("mobile").clear()
+        wd.find_element_by_name("mobile").send_keys(contedit.edmobilenumber)
+        wd.find_element_by_name("work").click()
+        wd.find_element_by_name("work").clear()
+        wd.find_element_by_name("work").send_keys(contedit.edworknumber)
+        wd.find_element_by_name("fax").click()
+        wd.find_element_by_name("fax").clear()
+        wd.find_element_by_name("fax").send_keys(contedit.edfaxnumber)
+        wd.find_element_by_name("email").click()
+        wd.find_element_by_name("email").clear()
+        wd.find_element_by_name("email").send_keys(contedit.edemail)
+        wd.find_element_by_name("update").click()
+        self.check_list()
+
     def delete_first_contact(self):
         wd = self.app.wd
         self.check_list()
