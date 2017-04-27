@@ -62,6 +62,17 @@ class ContactsHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.check_list()
 
+    def delete_first_contact(self):
+        wd = self.app.wd
+        self.check_list()
+        # select first contact
+        # delete first contact
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        self.check_list()
+
+
 
 
 
