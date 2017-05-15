@@ -11,8 +11,8 @@ def test_modify_first_contact_more(app):
     contact = Contacts(name="Семен", lastname="Семенов", homeaddress="Прелестная, 1", homenumber="1234567", mobilenumber="+71234567890", worknumber="9876543", faxnumber="8765432", email="fed@fed.ru")
     contact.id = old_contacts[0].id
     app.contacts.modify_first_contact(contact)
+    assert len(old_contacts) == app.contacts.count()
     new_contacts = app.contacts.get_contact_list()
-    assert len(old_contacts) == len(new_contacts)
     old_contacts[0] = contact
     assert sorted(old_contacts, key=Contacts.id_or_max) == sorted(new_contacts, key=Contacts.id_or_max)
 
@@ -26,7 +26,7 @@ def test_modify_first_contact_less(app):
     contact = Contacts(name="Василий", lastname="Васильевич", email="fed@fed.ru")
     contact.id = old_contacts[0].id
     app.contacts.modify_first_contact(contact)
+    assert len(old_contacts) == app.contacts.count()
     new_contacts = app.contacts.get_contact_list()
-    assert len(old_contacts) == len(new_contacts)
     old_contacts[0] = contact
     assert sorted(old_contacts, key=Contacts.id_or_max) == sorted(new_contacts, key=Contacts.id_or_max)

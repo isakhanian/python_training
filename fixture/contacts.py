@@ -51,6 +51,7 @@ class ContactsHelper:
         # enter
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.check_list()
+        self.contact_cash = None
 
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
@@ -62,6 +63,7 @@ class ContactsHelper:
         self.fill_contact_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.check_list()
+        self.contact_cash = None
 
 
     def delete_first_contact(self):
@@ -73,23 +75,27 @@ class ContactsHelper:
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
         self.check_list()
+        self.contact_cash = None
 
     def count(self):
         wd = self.app.wd
         self.check_list()
         return len(wd.find_elements_by_name("selected[]"))
 
+    contact_cash = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.check_list()
-        contacts = []
-        for row in wd.find_elements_by_name("entry"):
-            cells = row.find_elements_by_tag_name("td")
-            lastname = cells[1].text
-            name = cells[2].text
-            id = cells[0].find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contacts(name=name, lastname=lastname, id=id))
-        return contacts
+        if self.contact_cash is None:
+            wd = self.app.wd
+            self.check_list()
+            self.contact_cash = []
+            for row in wd.find_elements_by_name("entry"):
+                cells = row.find_elements_by_tag_name("td")
+                lastname = cells[1].text
+                name = cells[2].text
+                id = cells[0].find_element_by_name("selected[]").get_attribute("value")
+                self.contact_cash.append(Contacts(name=name, lastname=lastname, id=id))
+        return list(self.contact_cash)
 
 
 
