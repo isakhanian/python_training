@@ -54,28 +54,11 @@ class ContactsHelper:
         self.contact_cash = None
 
     def modify_first_contact(self, new_contact_data):
-        wd = self.app.wd
-        self.check_list()
-        # select first contact
-        # modify first contact
-        self.select_first_contact()
-        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
-        self.fill_contact_form(new_contact_data)
-        wd.find_element_by_name("update").click()
-        self.check_list()
-        self.contact_cash = None
+        self.modify_contact_by_index(0, new_contact_data)
 
 
     def delete_first_contact(self):
-        wd = self.app.wd
-        self.check_list()
-        # select first contact
-        # delete first contact
-        self.select_first_contact()
-        wd.find_element_by_xpath("//input[@value='Delete']").click()
-        wd.switch_to_alert().accept()
-        self.check_list()
-        self.contact_cash = None
+        self.delete_contact_by_index(0)
 
     def count(self):
         wd = self.app.wd
@@ -98,6 +81,25 @@ class ContactsHelper:
         return list(self.contact_cash)
 
 
+    def modify_contact_by_index(self, index, new_contact_data):
+        wd = self.app.wd
+        self.check_list()
+        self.select_contact_by_index(index)
+        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        self.fill_contact_form(new_contact_data)
+        wd.find_element_by_name("update").click()
+        self.check_list()
+        self.contact_cash = None
 
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
 
-
+    def delete_contact_by_index(self, index):
+        wd = self.app.wd
+        self.check_list()
+        self.select_contact_by_index(index)
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        self.check_list()
+        self.contact_cash = None
