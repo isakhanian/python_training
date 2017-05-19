@@ -79,10 +79,11 @@ class ContactsHelper:
                 lastname = cells[1].text
                 name = cells[2].text
                 id = cells[0].find_element_by_name("selected[]").get_attribute("value")
-                all_numbers = cells[5].text.splitlines()
+                all_numbers = cells[5].text
                 self.contact_cash.append(Contacts(name=name, lastname=lastname, id=id,
                                                   homenumber=all_numbers[0], mobilenumber=all_numbers[1],
-                                                  worknumber=all_numbers[2], secondhomenumber=all_numbers[3]))
+                                                  worknumber=all_numbers[2], secondhomenumber=all_numbers[3],
+                                                  all_numbers_from_home_page = all_numbers))
         return list(self.contact_cash)
 
 
@@ -91,8 +92,8 @@ class ContactsHelper:
         self.check_list()
         self.select_contact_by_index(index)
         row = wd.find_elements_by_name("entry")[index]
-        cell = row.find_elements_by_tag_name("td")[7]
-        cell.find_element_by_tag_name("a").click()
+        cells = row.find_elements_by_tag_name("td")[7]
+        cells.find_element_by_tag_name("a").click()
         self.fill_contact_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.check_list()
@@ -150,3 +151,4 @@ class ContactsHelper:
         return Contacts(homenumber=homenumber,
                         mobilenumber=mobilenumber, worknumber=worknumber,
                         secondhomenumber=secondhomenumber)
+
