@@ -78,11 +78,13 @@ class ContactsHelper:
                 cells = row.find_elements_by_tag_name("td")
                 lastname = cells[1].text
                 name = cells[2].text
+                companyaddress = cells[3].text
                 id = cells[0].find_element_by_name("selected[]").get_attribute("value")
+                all_mails = cells[4].text
                 all_numbers = cells[5].text
-                self.contact_cash.append(Contacts(name=name, lastname=lastname, id=id,
-                                                  homenumber=all_numbers[0], mobilenumber=all_numbers[1],
-                                                  worknumber=all_numbers[2], secondhomenumber=all_numbers[3],
+                self.contact_cash.append(Contacts(name=name, lastname=lastname, companyaddress=companyaddress,
+                                                  all_mails_from_home_page = all_mails,
+                                                  id=id,
                                                   all_numbers_from_home_page = all_numbers))
         return list(self.contact_cash)
 
@@ -131,12 +133,16 @@ class ContactsHelper:
         self.open_contact_to_edit_by_index(index)
         name = wd.find_element_by_name("firstname").get_attribute("value")
         lastname = wd.find_element_by_name("lastname").get_attribute("value")
+        companyaddress = wd.find_element_by_name("address").get_attribute("value")
         id = wd.find_element_by_name("id").get_attribute("value")
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         homenumber = wd.find_element_by_name("home").get_attribute("value")
         mobilenumber = wd.find_element_by_name("mobile").get_attribute("value")
         worknumber = wd.find_element_by_name("work").get_attribute("value")
         secondhomenumber = wd.find_element_by_name("phone2").get_attribute("value")
-        return Contacts(name=name, lastname=lastname, id=id, homenumber=homenumber,
+        return Contacts(name=name, lastname=lastname, companyaddress=companyaddress, id=id, email=email, email2=email2, email3=email3, homenumber=homenumber,
                         mobilenumber=mobilenumber, worknumber=worknumber,
                         secondhomenumber=secondhomenumber)
 
