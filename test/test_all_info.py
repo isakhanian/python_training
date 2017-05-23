@@ -18,6 +18,4 @@ def merge_numbers_like_on_home_page(contacts):
                                 filter(lambda x: x is not None, [contacts.homenumber, contacts.mobilenumber, contacts.worknumber, contacts.secondhomenumber]))))
 
 def merge_mails_like_on_home_page(contacts):
-    return "\n".join(filter(lambda x: x != "",
-                            map(lambda x: clear(x),
-                                filter(lambda x: x is not None, [contacts.email, contacts.email2, contacts.email3]))))
+    return "\n".join(filter(lambda x: x != "", [contacts.email, contacts.email2, contacts.email3]))
