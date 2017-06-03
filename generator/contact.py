@@ -3,7 +3,6 @@ from model.contacts import Contacts
 import random
 import string
 import os.path
-import json
 import getopt
 import sys
 import jsonpickle
