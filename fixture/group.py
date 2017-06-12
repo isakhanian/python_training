@@ -62,7 +62,6 @@ class GroupHelper:
         self.open_group_page()
         return len(wd.find_elements_by_name("selected[]"))
 
-
     group_cash = None
 
     def get_group_list(self):
