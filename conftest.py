@@ -4,7 +4,6 @@ import os.path
 import importlib
 import json
 from fixture.db import DbFixture
-
 from fixture.application import Application
 
 fixture = None
@@ -22,6 +21,7 @@ def load_config(file):
 @pytest.fixture
 def app(request):
     global fixture
+    global target
     browser = request.config.getoption("--browser")
     web_config = load_config(request.config.getoption("--target"))['web']
     if fixture is None or not fixture.is_valid():
