@@ -8,10 +8,10 @@ def test_modify_group_name(app, db):
         app.group.create(Group(name="test"))
     old_groups = db.get_group_list()
     mod_group = random.choice(old_groups) #задаем переменную, список, из которого будет выбирать элемент
-    group = Group(name="new group")
-    app.group.modify_group_by_id(mod_group.id, group)
+    group = Group(name="new group", id=mod_group.id)
+    old_groups.remove(mod_group)
+    app.group.modify_group_by_id(group.id, group)
     new_groups = db.get_group_list()
-    assert len(old_groups) == len(new_groups)
     old_groups.append(group)
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
@@ -21,10 +21,10 @@ def test_modify_group_header(app, db):
         app.group.create(Group(name="test"))
     old_groups = db.get_group_list()
     mod_group = random.choice(old_groups) #задаем переменную, список, из которого будет выбирать элемент
-    group = Group(header="new header")
-    app.group.modify_group_by_id(mod_group.id, group)
+    group = Group(name="new group", header="new header", id=mod_group.id)
+    old_groups.remove(mod_group)
+    app.group.modify_group_by_id(group.id, group)
     new_groups = db.get_group_list()
-    assert len(old_groups) == len(new_groups)
     old_groups.append(group)
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
