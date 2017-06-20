@@ -4,7 +4,7 @@ from model.contacts import Contacts
 from random import randrange
 import random
 
-def test_modify_first_contact_more(app, db):
+def test_modify_first_contact_more(app, db, check_ui):
     if len(db.get_contact_list()) == 0:
         app.contacts.add_new_user(Contacts(name="Иван", middlename="Иванович", lastname="Иванов", nickname="Ван", company="Галактика", companyaddress="Планетная улица, 1", homenumber="1111111",
                           mobilenumber="+71111111111", worknumber="9999999", faxnumber="8888888", email="ivan@ivan.ru",
@@ -17,9 +17,11 @@ def test_modify_first_contact_more(app, db):
     new_contacts = db.get_contact_list()
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contacts.id_or_max) == sorted(new_contacts, key=Contacts.id_or_max)
+    if check_ui:
+        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list, key=Contacts.id_or_max)
 
 
-def test_modify_first_contact_less(app, db):
+def test_modify_first_contact_less(app, db, check_ui):
     if len(db.get_contact_list()) == 0:
         app.contacts.add_new_user(Contacts(name="Иван", middlename="Иванович", lastname="Иванов", nickname="Ван", company="Галактика", companyaddress="Планетная улица, 1", homenumber="1111111",
                           mobilenumber="+71111111111", worknumber="9999999", faxnumber="8888888", email="ivan@ivan.ru",
@@ -32,9 +34,11 @@ def test_modify_first_contact_less(app, db):
     new_contacts = db.get_contact_list()
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contacts.id_or_max) == sorted(new_contacts, key=Contacts.id_or_max)
+    if check_ui:
+        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list, key=Contacts.id_or_max)
 
 
-#def test_modify_first_contact_less(app):
+    #def test_modify_first_contact_less(app):
     #if app.contacts.count() == 0:
         #app.contacts.add_new_user(Contacts(name="Иван", middlename="Иванович", lastname="Иванов", nickname="Ван", company="Галактика", companyaddress="Планетная улица, 1", homenumber="1111111",
                           #mobilenumber="+71111111111", worknumber="9999999", faxnumber="8888888", email="ivan@ivan.ru",

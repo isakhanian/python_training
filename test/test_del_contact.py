@@ -5,7 +5,7 @@ from random import randrange
 import random
 
 
-def test_delete_first_contact(app, db):
+def test_delete_first_contact(app, db, check_ui):
     if len(db.get_contact_list()) == 0:
         app.contacts.add_new_user(Contacts(name="Иван", middlename="Иванович", lastname="Иванов", nickname="Ван", company="Галактика", companyaddress="Планетная улица, 1", homenumber="111-11-11",
                           mobilenumber="+7 (111) 111-11-11", worknumber="999-99-99", faxnumber="888-88-88", email="ivan@ivan.ru",
@@ -17,6 +17,8 @@ def test_delete_first_contact(app, db):
     assert len(old_contacts) - 1 == len(new_contacts)
     old_contacts.remove(contact)
     assert old_contacts == new_contacts
+    if check_ui:
+        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list, key=Contacts.id_or_max)
 
 
 #def test_delete_first_contact(app):
