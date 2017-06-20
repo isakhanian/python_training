@@ -2,6 +2,7 @@ from pony.orm import *
 from datetime import datetime
 from model.group import Group
 from model.contacts import Contacts
+from pymysql.converters import decoders
 
 class ORMFixture:
     db = Database()
@@ -16,16 +17,17 @@ class ORMFixture:
     class ORMContact(db.Entity):
         _table_ = 'addressbook'
         id = PrimaryKey(int, column='id')
-        firstname = Optional(str, column='firstname')
+        name = Optional(str, column='firstname')
         lastname = Optional(str, column='lastname')
-        address = Optional(str, column='companyaddress')
+        companyaddress = Optional(str, column='address')
         email = Optional(str, column='email')
-        home = Optional(str, column='homenumber')
+        homenumber = Optional(str, column='home')
         deprecated = Optional(str, column='deprecated')
 
     def __init__(self, host, name, user, password):
-        self.db.bind('mysql', host=host, database=name, user=user, password=password)
+        self.db.bind('mysql', host=host, database=name, user=user, password=password, conv=decoders)
         self.db.generate_mapping()
+        sql_debug(True)
 
     def convert_groups_to_models(self, groups):
         def convert(group):
@@ -35,3 +37,12 @@ class ORMFixture:
     @db_session
     def get_group_list(self):
         return self.convert_groups_to_models(select(g for g in ORMFixture.ORMGroup))
+
+    def convert_contacts_to_models(self, contacts):
+        def convert(contact):
+            return Contacts(id=str(contact.id), name=contact.name, lastname=contact.lastname, companyaddress=contact.companyaddress, email=contact.email, homenumber=contact.homenumber)
+        return list(map(convert, contacts))
+
+    @db_session
+    def get_contact_list(self):
+        return self.convert_contacts_to_models(select(c for c in ORMFixture.ORMContact if c.deprecated is None))
