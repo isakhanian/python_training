@@ -11,7 +11,7 @@ def test_add_contact(app, db, json_contacts, check_ui):
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contacts.id_or_max) == sorted(new_contacts, key=Contacts.id_or_max)
     if check_ui:
-        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list, key=Contacts.id_or_max)
+        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list(), key=Contacts.id_or_max)
 
 
 #@pytest.mark.parametrize("contact", testcontactdata, ids=[repr(x) for x in testcontactdata])

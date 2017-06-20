@@ -18,7 +18,7 @@ def test_modify_first_contact_more(app, db, check_ui):
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contacts.id_or_max) == sorted(new_contacts, key=Contacts.id_or_max)
     if check_ui:
-        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list, key=Contacts.id_or_max)
+        assert sorted(new_contacts, key=Contacts.id_or_max) == sorted(app.contacts.get_contact_list(), key=Contacts.id_or_max)
 
 
 def test_modify_first_contact_less(app, db, check_ui):
